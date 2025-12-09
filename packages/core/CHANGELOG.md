@@ -1,5 +1,24 @@
 # Change Log
 
+## 1.34.1
+
+### Patch Changes
+
+- a6858e76cf: update SAML relay state length and improve error handling
+
+  The data type of the `relay_state` column in the `saml_application_sessions` table has been changed from varchar(256) to varchar(512) to accommodate longer Relay State values. For example, when Firebase acts as a Service Provider and initiates a SAML request, the relay state length is approximately 300-400 characters, which previously prevented Firebase from integrating with Logto as an SP before this fix.
+
+  Additionally, we have updated the error handling logic in the APIs related to the SAML authentication flow to make error messages more straightforward.
+
+- Updated dependencies [a6858e76cf]
+  - @logto/phrases@1.23.1
+  - @logto/schemas@1.34.1
+  - @logto/console@1.31.0
+  - @logto/demo-app@1.5.0
+  - @logto/experience@1.17.0
+  - @logto/account-center@0.1.0
+  - @logto/cli@1.34.1
+
 ## 1.34.0
 
 ### Minor Changes
